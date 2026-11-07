@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de fatorial</title>
+  <meta name="description" content="Calcule o fatorial de qualquer número inteiro de 0 a 1000 e veja a multiplicação passo a passo.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="pagina">
+    <header class="cabecalho">
+      <h1>Quanto vale <span class="sinal">n!</span></h1>
+      <p class="intro">
+        O fatorial de um número <strong>n</strong> é o produto de todos os inteiros
+        de 1 até n. Por exemplo, 5! = 5 × 4 × 3 × 2 × 1 = 120. Digite um número
+        inteiro de 0 a 1000 e veja o resultado.
+      </p>
+    </header>
+
+    <form id="formulario" class="formulario" novalidate>
+      <label for="numero">Número a fatorar</label>
+      <div class="linha-campo">
+        <input id="numero" name="numero" type="text" inputmode="numeric"
+               autocomplete="off" placeholder="Ex.: 10" aria-describedby="mensagem-erro" autofocus>
+        <button type="submit">Calcular fatorial</button>
+      </div>
+      <p id="mensagem-erro" class="erro" role="alert" hidden></p>
+
+      <div class="atalhos" aria-label="Exemplos rápidos">
+        <span>Experimente:</span>
+        <button type="button" class="atalho" data-valor="5">5</button>
+        <button type="button" class="atalho" data-valor="10">10</button>
+        <button type="button" class="atalho" data-valor="20">20</button>
+        <button type="button" class="atalho" data-valor="100">100</button>
+      </div>
+    </form>
+
+    <section id="resultado" class="resultado" aria-live="polite" hidden>
+      <p id="expressao" class="expressao"></p>
+      <p id="valor" class="valor"></p>
+      <p id="detalhes" class="detalhes"></p>
+      <button type="button" id="copiar" class="copiar">Copiar resultado</button>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Os cálculos usam BigInt, então o resultado é exato mesmo para números grandes.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
